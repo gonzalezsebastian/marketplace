@@ -34,15 +34,11 @@ const ArticleList = () => {
       [id]: { editedTitle, editedDescription },
     }));
 
-    // Actualiza el array articlesData en api.js
     const updatedArticles = articles.map((article) =>
       article.id === id ? { ...article, title: editedTitle, description: editedDescription } : article
     );
 
-    // Actualiza el estado local y guarda el artículo editado en la API simulada
     setArticles(updatedArticles);
-
-    // Utiliza saveArticle para guardar los cambios
     saveArticle({ id, title: editedTitle, description: editedDescription });
   };
 
