@@ -1,0 +1,31 @@
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 1vw;
+  }
+  
+.articles > * {
+    flex-basis: calc(20% - 1vw);
+    margin: 1vw;
+    box-sizing: border-box;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}
+
+.pagination button{
+    margin: 0 0.5vw;
+    padding: 0.5vw;
+    border: none;
+    border-radius: 0.5vw;
+    color: #fff;
+    background-color: #00ffaa;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}

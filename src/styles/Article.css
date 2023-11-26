@@ -1,0 +1,136 @@
+.product {
+    background-color: #f5f5f5;
+    margin-bottom: 1vw;
+    padding: 1vw;
+    padding: 1vw 0.5vw 0 0.5vw;
+}
+  
+.product h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5vw;
+    color: black;
+}
+  
+.product p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+}
+
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.product .seller{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5vw 0;
+}
+
+.product .seller .store{
+    color: #24cecc;
+    font-weight: 800;
+}
+
+.product .seller .price{
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.product .review{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product .review .reviewer{
+    display: flex;
+    align-items: center;
+}
+
+.star{
+    font-size: 1.5rem;
+}
+
+.product .review .reviewer img{
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.container img{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+  
+.editArticle {
+    background-color: #f5f5f5;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vw;
+    padding: 1vw 0.5vw 0 0.5vw;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    font-family: 'Manrope', sans-serif;
+    padding: 0.5vw;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.buttons {
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5vw;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+  
+.editArticle {
+    background-color: #f5f5f5;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vw;
+    padding: 1vw;
+}
+
+.editArticle input,
+.editArticle textarea {
+    width: 100%;
+    margin-bottom: 1vw;
+    padding: 0.5vw;
+    font-size: 1rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.editArticle .buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+hr{
+    width: 100%;
+    margin: 1vw 0;
+    border: 1px solid #797979;
+}

@@ -1,0 +1,22 @@
+.admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(32, 31, 31);
+    color: whitesmoke;
+}
+
+.admin .adminButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin .adminButtons button{
+    margin: 1vw 0.5vw;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
