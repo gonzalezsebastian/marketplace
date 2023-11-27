@@ -20,7 +20,7 @@ const StarRating = ({ value, onClick }) => {
   );
 };
 
-const Article = ({ article, isAdmin }) => {
+const Article = ({ article, isAdmin, onEditValues }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(article.title);
   const [editedDescription, setEditedDescription] = useState(article.description);
@@ -32,8 +32,16 @@ const Article = ({ article, isAdmin }) => {
   const handleEditClick = () => {
     setIsEditing(true);
   };
-
   const handleSaveClick = () => {
+    onEditValues({
+      title: editedTitle,
+      description: editedDescription,
+      store: editedStore,
+      price: editedPrice,
+      reviewer: editedReviewer,
+      rating: editedRating,
+    });
+
     setIsEditing(false);
   };
 

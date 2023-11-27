@@ -1,5 +1,5 @@
 
-const articlesData = [
+let articlesData = [
   { 
       id: 1,
       image: '/guayacanes.jpg',
@@ -167,20 +167,30 @@ const articlesData = [
   }
 ];
 
+
 const fetchArticles = async () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(articlesData);
-      }, 500);
-    });
-  };
-  
-  const saveArticle = async (articleData) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(articleData);
-      }, 500);
-    });
-  };
-  
-  export { fetchArticles, saveArticle };
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const storedArticles = localStorage.getItem('articles');
+      articlesData = storedArticles ? JSON.parse(storedArticles) : articlesData;
+      resolve(articlesData);
+    }, 500);
+  });
+};
+
+const saveArticle = async (articleIndex, editedValues) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      articlesData = articlesData.map((article, index) =>
+        index === articleIndex ? { ...article, ...editedValues } : article
+      );
+
+      console.log('Updated Articles:', articlesData);
+
+      localStorage.setItem('articles', JSON.stringify(articlesData));
+      resolve(editedValues);
+    }, 500);
+  });
+};
+
+export { fetchArticles, saveArticle, articlesData };

@@ -8,7 +8,6 @@ const ArticleList = () => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage] = useState(10);
-  const [editedValues, setEditedValues] = useState({});
   const { isAdmin } = useContext(AuthContext);
 
   useEffect(() => {
@@ -28,18 +27,13 @@ const ArticleList = () => {
     setCurrentPage(pageNumber);
   };
 
-  const handleEditValues = (id, editedTitle, editedDescription) => {
-    setEditedValues((prevValues) => ({
-      ...prevValues,
-      [id]: { editedTitle, editedDescription },
-    }));
-
-    const updatedArticles = articles.map((article) =>
-      article.id === id ? { ...article, title: editedTitle, description: editedDescription } : article
+  const handleEditValues = (index, editedValues) => {
+    const updatedArticles = articles.map((article, i) =>
+      i === index ? { ...article, ...editedValues } : article
     );
 
     setArticles(updatedArticles);
-    saveArticle({ id, title: editedTitle, description: editedDescription });
+    saveArticle(index, editedValues);
   };
 
   return (
@@ -57,13 +51,12 @@ const ArticleList = () => {
         )}
       </div>
       <div className='articles'>
-        {currentArticles.map((article) => (
+        {currentArticles.map((article,index) => (
           <Article
             key={article.id}
             article={article}
             isAdmin={isAdmin}
-            editedValues={editedValues[article.id]}
-            onEditValues={handleEditValues}
+            onEditValues={(editedValues)=>handleEditValues(index, editedValues)}
           />
         ))}
       </div>
