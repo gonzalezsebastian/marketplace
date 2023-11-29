@@ -130,7 +130,7 @@ const Article = ({ article, isAdmin, onEditValues }) => {
               </div>
             </div>
             <div className='buttons'>
-              {isAdmin && <button onClick={handleEditClick}>Edit</button>}
+              {isAdmin && <button className='edit' onClick={handleEditClick}>Edit</button>}
             </div>
           </div>
         </div>
