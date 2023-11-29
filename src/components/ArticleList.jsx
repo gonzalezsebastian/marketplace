@@ -11,7 +11,7 @@ const ArticleList = () => {
   const [articlesPerPage] = useState(10);
   const { isAdmin } = useContext(AuthContext);
   const [searchTerm, setSearchTerm] = useState('');
-  const [category, setCategory] = useState('title'); // Default category is 'title'
+  const [category, setCategory] = useState('title');
 
   useEffect(() => {
     const loadArticles = async () => {
