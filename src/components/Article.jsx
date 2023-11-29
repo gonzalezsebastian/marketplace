@@ -110,7 +110,7 @@ const Article = ({ article, isAdmin, onEditValues }) => {
           </div>
         </div>
       ) : (
-        <div className='container'>
+        <div className='article-container'>
           <img src={article.image} alt={article.title} />
           <div className='product'>
             <h1>{editedTitle}</h1>

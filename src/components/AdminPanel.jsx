@@ -1,16 +1,14 @@
-import { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 import '../styles/AdminPanel.css'
 
 const AdminPanel = () => {
-  const { loginAsAdmin, logout } = useContext(AuthContext);
 
   return (
     <div className='admin'>
-      <h2>Admin Panel</h2>
       <div className='adminButtons'>
-        <button onClick={loginAsAdmin}>Login as Admin</button>
-        <button onClick={logout}>Logout</button>
+        <Link to='/'>
+          <button>Logout</button>
+        </Link>
       </div>
     </div>
   );

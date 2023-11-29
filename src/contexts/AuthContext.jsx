@@ -3,18 +3,20 @@ import { createContext, useState } from 'react';
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [userType, setUserType] = useState(null);
 
-  const loginAsAdmin = () => {
-    setIsAdmin(true);
+  const login = (type) => {
+    setUserType(type);
   };
 
   const logout = () => {
-    setIsAdmin(false);
+    setUserType(null);
   };
 
+  const isAdmin = userType === 'admin';
+
   return (
-    <AuthContext.Provider value={{ isAdmin, loginAsAdmin, logout }}>
+    <AuthContext.Provider value={{ isAdmin, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,6 +1,7 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext';
 import Home from './pages/Home';
-import AdminPanel from './components/AdminPanel';
+import Login from "./pages/Login";
 import './styles/App.css';
 
 
@@ -8,8 +9,12 @@ const App = () => {
   return (
     <div className='app'>
       <AuthProvider>
-        <AdminPanel />
-        <Home />
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/home' element={<Home />} />
+          </Routes>
+        </BrowserRouter>
       </AuthProvider>
     </div>
   );
